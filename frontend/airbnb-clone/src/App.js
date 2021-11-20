@@ -15,6 +15,7 @@ import Logout from './Logout';
 import Trial from './Trial';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ProtectedRoutes from './ProtectedRoute';
 
 
 axios.get('http://localhost:1337/restaurants').then(response => {
@@ -39,9 +40,6 @@ function App() {
             <Login />
             <Logout />
           </Route>
-          <Route path="/strapi">
-            <Strapi />
-          </Route>
           <Route path="/available-spaces">
             <Available />
           </Route>
@@ -61,6 +59,11 @@ function App() {
           <Route path="/related/:id">
             <Related />
           </Route>
+          <ProtectedRoutes
+            exact
+            path="/strapi"
+            component={Strapi}
+          />
           <Route exact path="/">
             <Home />
           </Route>

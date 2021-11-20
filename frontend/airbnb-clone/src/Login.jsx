@@ -7,12 +7,24 @@ function Login() {
     axios.get('http://localhost:1337/connect/auth0').then(response => {
   console.log(response);
 });
-    const { loginWithRedirect } = useAuth0();
+    const { loginWithRedirect, logout, user, isLoading } = useAuth0();
+
     return (
-        <button onClick={()=> loginWithRedirect()}>
+        <>
+        {!isLoading && !user && (
+            <button onClick={()=> loginWithRedirect()}>
             Login
            
-        </button>
+            </button>
+        )}
+        {!isLoading && user && (
+            <button onClick={()=> logout()}>
+            Logout
+           
+            </button>
+        )}
+        
+        </>
     )
 }
 
