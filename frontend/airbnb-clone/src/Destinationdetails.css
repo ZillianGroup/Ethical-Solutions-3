@@ -1022,6 +1022,13 @@ hr{
     
 }
 @media screen and (min-width: 868px){
+    .App .content .middle-section .left-bottom{
+        display: flex;
+        margin-left: 150px;
+        margin-top: 20px;
+        flex-direction: column;
+    
+    }
     .App .content  .related-data .places{
         display: flex;
     }
