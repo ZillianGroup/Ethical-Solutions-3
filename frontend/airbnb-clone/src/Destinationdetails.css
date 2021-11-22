@@ -985,9 +985,17 @@ hr{
         display: none;
     }
 
+    
+   
     .App .content  .related-data .places{
         display: flex;
     }
+
+    .App .content  .related-data{
+        margin-left: 100px;
+        margin-top: 30px;
+    }
+    
     
     
     .App .content .middle-section .left-bottom{
@@ -999,7 +1007,7 @@ hr{
     }
 
     .App .content .images .left img{
-        width: 250px;
+        width: 310px;
         height: 250px;
     }
 
