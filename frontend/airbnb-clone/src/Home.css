@@ -8,7 +8,7 @@
 
 
 
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 480px){
     .home__section {
       display: none;
     
@@ -98,29 +98,36 @@
     }
   }
 
-  @media screen and (min-width: 768px){
-    
-
-    .home .mobile .image{
-      display: none;
-    }
-
-    .home  .mobile-carousel{
-      display: none;
-    }
-
-    .home .mobile .mobile-contents .button{
-      display: none;
-    }
-
-
-    
-  }
   
 
+  @media screen and (min-width: 768px){
+    
+    .mobile{
+      display: none;
+      
+    }
+
+    .mobile-carousel{
+      display: none;
+      
+    }
+    
+  }
 
 
+  @media screen and (min-width: 868px){
+    
+    .mobile{
+      display: none;
+      
+    }
 
+    .mobile-carousel{
+      display: none;
+      
+    }
+    
+  }
 
-
+ 
 

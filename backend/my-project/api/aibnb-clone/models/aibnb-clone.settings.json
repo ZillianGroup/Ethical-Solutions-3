@@ -84,12 +84,6 @@
         "bath"
       ]
     },
-    "checkin": {
-      "type": "date"
-    },
-    "checkout": {
-      "type": "date"
-    },
     "Location": {
       "type": "string",
       "required": true

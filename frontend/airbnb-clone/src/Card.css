@@ -43,7 +43,7 @@
   }
 
 
-  @media screen and (max-width: 700px){
+  @media screen and (max-width: 480px){
     .card{
       width: 220px;
       height: 190px;
@@ -77,5 +77,33 @@
       color: black;
     }
   }
+
+
+  @media screen and (min-width: 768px){
+    
+    .card{
+      width: 210px;
+      height: 280px;
+      margin-top: 130px;
+      
+    }
+    
+  }
+
+
+  @media screen and (min-width: 868px){
+    
+    .card{
+      width: 420px;
+      height: 390px;
+      
+    }
+    
+  }
+
+ 
+  
+
+  
 
   

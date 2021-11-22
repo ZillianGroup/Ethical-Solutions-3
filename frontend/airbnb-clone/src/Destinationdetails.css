@@ -713,10 +713,17 @@ hr{
     margin-top: 20px;
 }
 
-@media screen and (max-width: 700px){
+.App .content  .related-data .places{
+    display: flex;
+}
+
+@media screen and (max-width: 480px){
     .App .content  .related-data{
         margin-left: 40px;
         margin-top: 20px;
+    }
+    .App .content  .related-data .places{
+        display: flex;
     }
     .App .content .feedback{
         background-color: white;
@@ -844,6 +851,7 @@ hr{
         display: flex;
         justify-content: space-around;
         width: 270px;
+        position: relative;
     
     }
     .App .content .middle-section .upper .heading h1{
@@ -976,18 +984,211 @@ hr{
     .App .content .mobile-carousel{
         display: none;
     }
+
+    .App .content  .related-data .places{
+        display: flex;
+    }
+    
+    
+    .App .content .middle-section .left-bottom{
+        display: flex;
+        margin-left: 10px;
+        margin-top: 20px;
+        flex-direction: column;
+    
+    }
+
+    .App .content .images .left img{
+        width: 250px;
+        height: 250px;
+    }
+
+    .App .content .images .right img{
+        width: 220px;
+        height: 120px;
+    }
+    .App .content .images .right{
+        margin-right: 120px;
+    }
+    .App .content .images .right .top{
+        width: 300px;
+    }
+    .App .content .images .right .bottom{
+        width: 300px;
+    }
     
     
 
     
 }
-@media screen and (min-width: 992px){
+@media screen and (min-width: 868px){
+    .App .content  .related-data .places{
+        display: flex;
+    }
+
+    .App .content .middle-section .left-bottom .basics .amenities{
+        display: flex;
+    
+    }
+    
+    .App .content .middle-section .left-bottom .basics .amenities .logo{
+        margin-top: 20px;
+    
+    }
+    
+    .App .content .middle-section .left-bottom .basics .amenities .logo .fa-home{
+        font-size: 30px;
+    
+    }
+
+    .App .content .middle-section .offer .packages .heading h1{
+        font-weight: 700;
+        font-size: 24px;
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+    
+    
+    
+    .App .content .middle-section .left-bottom .basics .amenities .description{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    
+    }
+    
+    .App .content .middle-section .left-bottom .basics .amenities .description .heading h2{
+        font-size: 19px;
+        font-weight: 700;
+        position: absolute;
+        left: 7px;
+    
+    }
+
+    .App .content .middle-section .left-bottom .basics .amenities .description .details{
+        
+        margin-top: 20px;
+    
+    }
+
+    .App .content .middle-section .left-bottom .basics2 .amenities .description .heading h2{
+        font-size: 19px;
+        font-weight: 700;
+        position: absolute;
+        left: 7px;
+    
+    }
+
+    .App .content .middle-section .left-bottom .basics2 .amenities .description .details{
+        
+        margin-top: 20px;
+    
+    }
+
+    .App .content .middle-section .left-bottom .basics3 .amenities .description .heading h2{
+        font-size: 19px;
+        font-weight: 700;
+        position: absolute;
+        left: 7px;
+    
+    }
+
+    .App .content .middle-section .left-bottom .basics3 .amenities .description .details{
+        
+        margin-top: 20px;
+    
+    }
     .App .content .mobile-carousel{
         display: none;
     }
+
+    .App .content .middle-section .upper{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        
+    
+    }
+
+    .App .content .middle-section .upper .heading h1{
+        position: absolute;
+        left: 10px;
+        
+        
+    
+    }
+    
     .App .content .date-picker{
         display: flex;
     }
+
+    .App .content .heading{
+        margin-left: 100px;
+    }
+
+    
+
+    .App .content .images .right img{
+        width: 320px;
+        height: 220px;
+    }
+
+    .App .content .images .right{
+        margin-right: 120px;
+    }
+    .App .content .images .left{
+        width: 550px;
+        height: 150px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        
+    }
+
+    .App .content .images .left img{
+        width: 350px;
+        height: 150px;
+    }
+
+    .App .content .images .right  .top{
+        margin-left: 10px;
+        width: 250px;
+        
+    }
+    .App .content .images .right  .bottom img{
+        margin-left: 10px;
+        width: 250px;
+        margin-top: 10px;
+        
+    }
+
+    .App .content .images .left img{
+        width: 550px;
+        height: 450px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    
+    .App .content .images .left .base{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .App .content .images .left img:hover{
+        background-color: black;
+        opacity: 0.7;
+    }
+    .App .content .images .right {
+        margin-left: 5px;
+    }
+    .App .content .images .right  .top{
+        display: flex;
+        
+    }
+    .App .content .images .right .top img:hover{
+        background-color: black;
+        opacity: 0.7;
+    }
+    
     
     
 
