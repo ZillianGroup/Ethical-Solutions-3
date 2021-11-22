@@ -465,7 +465,7 @@ export default function Destinationdetails() {
                         
 
                     ):(
-                        <h2>No related destinations</h2>
+                        <h2>No related destinations(yet)</h2>
 
 
                     )}
@@ -497,7 +497,7 @@ export default function Destinationdetails() {
                                          <h3>{each.id}</h3>
                                      </div>
                                      <div className="content">
-                                     <h3>{each.reviews}</h3>
+                                     <h3>"{each.reviews}"</h3>
                                      <p>by {each.name}</p>
  
                                      </div>
