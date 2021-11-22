@@ -287,7 +287,7 @@ export default function Destinationdetails() {
                         
 
                         <div className="check-availability">
-                            <Link to={'/strapi'}>
+                            <Link to={'/book-destination'}>
                                 <button ><p>BOOK DESTINATION</p></button>
 
                             </Link>
@@ -440,7 +440,7 @@ export default function Destinationdetails() {
         
 
                 </div>
-                <Link to={`/strapi`}>
+                <Link to={`/book-destination`}>
                     <div className="proceed">
                         <button>Proceed to book destination</button>
                     </div>
