@@ -311,7 +311,7 @@ export default function Destinationdetails() {
                             <div className="modal">
                                 <div className="modal-overlay">
                                     <div className="modal-content">
-                                    <button onClick={toggleModal} className="close"><i class="icon-remove"></i></button>
+                                    <button onClick={toggleModal} className="close"><i class="fa fa-window-close"></i></button>
                                         <div className="adults">
                                             <div className="tag">
                                                 <h1>Adults</h1>
