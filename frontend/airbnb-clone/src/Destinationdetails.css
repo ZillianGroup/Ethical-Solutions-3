@@ -443,7 +443,7 @@ hr{
 
 .App .content .modal-content{
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 72%;
     background-color: white;
     width: 300px;
