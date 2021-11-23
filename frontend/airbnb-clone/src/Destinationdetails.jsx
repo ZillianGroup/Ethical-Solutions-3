@@ -53,6 +53,11 @@ export default function Destinationdetails() {
     const [number1, setNumber1] = useState()
     const [number2, setNumber2] = useState()
     const [total, setTotal] = useState(number1 * number2)
+    const [modal, setModal] = useState(false)
+
+    const toggleModal = () =>{
+        setModal(!modal)
+    }
    
     function addThemTogether(){
         setTotal(number1 * number2)
@@ -250,7 +255,7 @@ export default function Destinationdetails() {
                    
                     <div className="right">
                         <div className="amount">
-                            <p className="tag">${data.Amount}</p>
+                            <p className="tag">${data.Amount} </p>
                             <p className="duration">/night</p>
                         </div>
                         <div className="checks">
@@ -268,11 +273,12 @@ export default function Destinationdetails() {
                         <div className="guests">
                             <div className="guest-number">
                                 <h6>GUESTS</h6>
-                                <input type="number"  placeholder="Number of guests" value={number1} onChange={e =>setNumber1(+e.target.value)}/>
+                                
                                 
                             </div>
                             <div className="dropdown">
-                                <i class="fas fa-angle-down"></i>
+                                <input   placeholder="Number of guests" value={number1} onChange={e =>setNumber1(+e.target.value)}/>
+                                <i class="fas fa-angle-down" onClick={toggleModal}></i>
 
                             </div>
                         </div>
@@ -299,6 +305,71 @@ export default function Destinationdetails() {
                         
                     </div>
                     <hr className="line-up"></hr>
+                    <div className="modals">
+                        <button onClick={toggleModal}></button>
+                        {modal && (
+                            <div className="modal">
+                                <div className="modal-overlay">
+                                    <div className="modal-content">
+                                    <button onClick={toggleModal} className="close"><i class="icon-remove"></i></button>
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Adults</h1>
+                                                <p>Age 13+</p>
+                                            </div>
+                                            <div className="number">
+                                                <button className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>0</p>
+                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Children</h1>
+                                                <p>Ages 2-12</p>
+                                            </div>
+                                            <div className="number1">
+                                                <button className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>0</p>
+                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Infants</h1>
+                                                <p>Under 2</p>
+                                            </div>
+                                            <div className="number2">
+                                                <button className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>0</p>
+                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Pets</h1>
+                                                <p>Bringing an assistance animal?</p>
+                                            </div>
+                                            <div className="number3">
+                                                <button className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>0</p>
+                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    
+
+                                </div>
+
+                            </div>
+
+                         )}
+                    </div>
                     
 
                     <div className="destination-details">

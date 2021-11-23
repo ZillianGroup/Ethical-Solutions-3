@@ -17,7 +17,7 @@ function Header() {
                      <i class="fas fa-search"></i>
 
                     </Link>
-                    <input type="text"  placeholder="Where are you going"/>
+                    <input type="text"  placeholder="Where are you going?"/>
                 </div>
            
             

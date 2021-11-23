@@ -41,7 +41,7 @@ function Home() {
 
 
                     
-                    <input type="text"  placeholder="Where are you going"/>
+                    <input type="text"  placeholder="Where are you going?"/>
                 </div>
                 <div className="text">
                     <h4>Not sure where to go?</h4>
