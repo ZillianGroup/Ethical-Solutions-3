@@ -54,11 +54,33 @@ export default function Destinationdetails() {
     const [number2, setNumber2] = useState()
     const [total, setTotal] = useState(number1 * number2)
     const [modal, setModal] = useState(false)
+    const [count1, setCount1] =  useState(0)
+    const [count2, setCount2] =  useState(0)
+    const [count3, setCount3] =  useState(0)
+   
 
     const toggleModal = () =>{
         setModal(!modal)
     }
-   
+    const handleIncrement1 = () =>{
+        setCount1(count1 + 1)
+    }
+    const handleDecrement1 = () =>{
+        setCount1(count1 - 1)
+    }
+    const handleIncrement2 = () =>{
+        setCount2(count2 + 1)
+    }
+    const handleDecrement2 = () =>{
+        setCount2(count2 - 1)
+    }
+    const handleIncrement3 = () =>{
+        setCount3(count3 + 1)
+    }
+    const handleDecrement3 = () =>{
+        setCount3(count3 - 1)
+    }
+    
     function addThemTogether(){
         setTotal(number1 * number2)
 
@@ -273,20 +295,23 @@ export default function Destinationdetails() {
                         <div className="guests">
                             <div className="guest-number">
                                 <h6>GUESTS</h6>
+                            
                                 
                                 
                             </div>
                             <div className="dropdown">
-                                <input   placeholder="Number of guests" value={number1} onChange={e =>setNumber1(+e.target.value)}/>
+                                <input   placeholder="Number of guests" value={count1 + count2 + count3} />
                                 <i class="fas fa-angle-down" onClick={toggleModal}></i>
 
+
                             </div>
+                            
                         </div>
                         <div className="total">
-                            <input type="number"  placeholder=" Destination amount" value={number2} onChange={e =>setNumber2(+e.target.value)}/>
+                            <input  value={data.Amount}/>
                             <div className="get-total">
                             <button onClick={addThemTogether}>Get Total</button>
-                            <h2>${total}</h2>
+                            <h2>${data.Amount * (count1 + count2 + count3) }</h2>
                             </div>
 
                         </div>
@@ -318,9 +343,9 @@ export default function Destinationdetails() {
                                                 <p>Age 13+</p>
                                             </div>
                                             <div className="number">
-                                                <button className="plus"><i class="fa fa-plus"></i></button>
-                                                <p>0</p>
-                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                                <button  onClick={handleIncrement1}className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>{count1}</p>
+                                                <button onClick={handleDecrement1} className="minus"><i class="fa fa-minus"></i></button>
                                             </div>
                                         </div>
 
@@ -330,9 +355,9 @@ export default function Destinationdetails() {
                                                 <p>Ages 2-12</p>
                                             </div>
                                             <div className="number1">
-                                                <button className="plus"><i class="fa fa-plus"></i></button>
-                                                <p>0</p>
-                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                                <button onClick={handleIncrement2}className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>{count2}</p>
+                                                <button onClick={handleDecrement2}className="minus"><i class="fa fa-minus"></i></button>
                                             </div>
                                         </div>
 
@@ -342,9 +367,9 @@ export default function Destinationdetails() {
                                                 <p>Under 2</p>
                                             </div>
                                             <div className="number2">
-                                                <button className="plus"><i class="fa fa-plus"></i></button>
-                                                <p>0</p>
-                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                                <button onClick={handleIncrement3}className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>{count3}</p>
+                                                <button onClick={handleDecrement3}className="minus"><i class="fa fa-minus"></i></button>
                                             </div>
                                         </div>
 

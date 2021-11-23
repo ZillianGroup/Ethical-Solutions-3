@@ -444,7 +444,7 @@ hr{
 .App .content .modal-content{
     position: absolute;
     top: 45%;
-    left: 72%;
+    left: 73%;
     background-color: white;
     width: 300px;
     height: 400px;
@@ -861,6 +861,7 @@ hr{
 }
 
 @media screen and (max-width: 480px){
+    
     .App .content  .related-data{
         margin-left: 40px;
         margin-top: 20px;
