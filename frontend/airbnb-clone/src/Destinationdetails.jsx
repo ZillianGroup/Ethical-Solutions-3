@@ -10,6 +10,7 @@ import  getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { DateRangePickerComponent} from '@syncfusion/ej2-react-calendars';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Carousel, { CarouselItem } from "./Carousel";
@@ -50,14 +51,12 @@ export default function Destinationdetails() {
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: ""})
     const [allEvents, setAllEvents] = useState(events)
     const [show, setShow] = useState(false)
-    const [number1, setNumber1] = useState()
-    const [number2, setNumber2] = useState()
-    const [total, setTotal] = useState(number1 * number2)
     const [modal, setModal] = useState(false)
     const [count1, setCount1] =  useState(0)
     const [count2, setCount2] =  useState(0)
     const [count3, setCount3] =  useState(0)
-   
+    
+
 
     const toggleModal = () =>{
         setModal(!modal)
@@ -81,10 +80,7 @@ export default function Destinationdetails() {
         setCount3(count3 - 1)
     }
     
-    function addThemTogether(){
-        setTotal(number1 * number2)
-
-    }
+    
     const [review, setReview] = useState({
         name:"",
         reviews:""
@@ -284,7 +280,6 @@ export default function Destinationdetails() {
                             <div className="check-in" >
                                 <h6> CHECK IN</h6>
                                 <input type="date"  placeholder="add date"/>
-                               
                             </div>
                             <div className="check-out">
                             <h6> CHECKOUT</h6>
@@ -302,7 +297,73 @@ export default function Destinationdetails() {
                             <div className="dropdown">
                                 <input   placeholder="Number of guests" value={count1 + count2 + count3} />
                                 <i class="fas fa-angle-down" onClick={toggleModal}></i>
+                                {show ? <div className="modals">
+                        <button onClick={toggleModal}></button>
+                        {modal && (
+                            <div className="modal">
+                                <div className="modal-overlay">
+                                    <div className="modal-content">
+                                    <button onClick={toggleModal} className="close"><i class="fa fa-window-close"></i></button>
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Adults</h1>
+                                                <p>Age 13+</p>
+                                            </div>
+                                            <div className="number">
+                                                <button  onClick={handleIncrement1}className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>{count1}</p>
+                                                <button onClick={handleDecrement1} className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
 
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Children</h1>
+                                                <p>Ages 2-12</p>
+                                            </div>
+                                            <div className="number1">
+                                                <button onClick={handleIncrement2}className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>{count2}</p>
+                                                <button onClick={handleDecrement2}className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Infants</h1>
+                                                <p>Under 2</p>
+                                            </div>
+                                            <div className="number2">
+                                                <button onClick={handleIncrement3}className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>{count3}</p>
+                                                <button onClick={handleDecrement3}className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div className="adults">
+                                            <div className="tag">
+                                                <h1>Pets</h1>
+                                                <p>Bringing an assistance animal?</p>
+                                            </div>
+                                            <div className="number3">
+                                                <button className="plus"><i class="fa fa-plus"></i></button>
+                                                <p>0</p>
+                                                <button className="minus"><i class="fa fa-minus"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    
+
+                                </div>
+
+                            </div>
+
+                         )}
+                    </div>
+                    :null}
+                                <div className="show"></div>
 
                             </div>
                             
@@ -310,7 +371,7 @@ export default function Destinationdetails() {
                         <div className="total">
                             <input  value={data.Amount}/>
                             <div className="get-total">
-                            <button onClick={addThemTogether}>Get Total</button>
+                            <button>Get Total</button>
                             <h2>${data.Amount * (count1 + count2 + count3) }</h2>
                             </div>
 
@@ -536,15 +597,13 @@ export default function Destinationdetails() {
         
 
                 </div>
+                <DateRangePickerComponent placeholder="Enter check in date"></DateRangePickerComponent>
                 <Link to={`/book-destination`}>
                     <div className="proceed">
                         <button>Proceed to book destination</button>
                     </div>
 
-                </Link>
-                
-                
-                        
+                </Link>      
 
                 <div className="related-data">
                    
@@ -566,10 +625,6 @@ export default function Destinationdetails() {
 
                     )}
 
-                        
-                   
-
-                   
                     
                 </div>
                 <div className="review">
