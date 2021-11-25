@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "available_spaces",
   "info": {
-    "name": "Available-spaces"
+    "name": "Available-spaces",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -20,8 +21,11 @@
     "Description": {
       "type": "richtext"
     },
-    "time": {
-      "type": "datetime"
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
     }
   }
 }

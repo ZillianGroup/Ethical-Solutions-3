@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SearchPage from './SearchPage';
 import Strapi from './Strapi';
+import Available from './Available';
 import Destination from './Destination';
 import Destinationdetails from './Destinationdetails';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -29,6 +30,10 @@ function App() {
           
           <Route path="/book-destination">
             <Strapi />
+          </Route>
+
+          <Route path="/available-destinations">
+            <Available />
           </Route>
           
           

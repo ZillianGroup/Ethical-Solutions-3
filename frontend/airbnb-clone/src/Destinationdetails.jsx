@@ -17,9 +17,11 @@ import Carousel, { CarouselItem } from "./Carousel";
 
 
 
+
 const locales = {
     "en-US": require("date-fns/locale/en-US")
 }
+
 
 const localizer = dateFnsLocalizer({
     format,
@@ -30,33 +32,42 @@ const localizer = dateFnsLocalizer({
   
 })
 
-const events =[
-    {
-      title: "",
-      allday: true,
-      start: new Date(2021,6,0),
-      end: new Date(2021,6,0),
-      
-    }
-  
-  
-  
-]
-  
+
 
 
 export default function Destinationdetails() {
+    
+    const events =[
+        {
+          title: "Available",
+          allday: true,
+          start: new Date(2021,11,1),
+          end: new Date(2021,11,12),
+          
+        }
+      
+      
+      
+    ]
+
+   
+
+   
+    
     const url = "http://localhost:1337/reviews" 
     const [front, setFront] = useState()
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: ""})
     const [allEvents, setAllEvents] = useState(events)
     const [show, setShow] = useState(false)
     const [modal, setModal] = useState(false)
+    const [modal2, setModal2] = useState(false)
     const [count1, setCount1] =  useState(0)
     const [count2, setCount2] =  useState(0)
     const [count3, setCount3] =  useState(0)
-    
-
+     
+    const toggleModal2 = () =>{
+        setModal2(!modal2)
+    }
 
     const toggleModal = () =>{
         setModal(!modal)
@@ -96,7 +107,6 @@ export default function Destinationdetails() {
         })
     }, []);
 
-    
 
     function submit(e){
         e.preventDefault();
@@ -123,6 +133,15 @@ export default function Destinationdetails() {
    if(loading) return <p>loading...</p>
    if(error) return <p>Error...</p>
    console.log(data)
+
+   const eventee =[
+    {
+        title: "Available",
+        start: data.available,
+        end: data.End,
+        
+    }
+   ]
     return (
 
         <div className="App">
@@ -145,8 +164,8 @@ export default function Destinationdetails() {
                 ):(
                     <h1>Image format not available</h1>
                 )}
-                  
-                   <div className="right">
+                  {data.pictures.length  === 4 ? (
+                       <div className="right">
                        <div className="top">
                          <img src={`${`http://localhost:1337`}${data.pictures[0].formats.thumbnail.url}`} alt="destination-pics"/>
                          <img src={`${`http://localhost:1337`}${data.pictures[1].formats.thumbnail.url}`} alt="destination-pics"/>
@@ -158,6 +177,8 @@ export default function Destinationdetails() {
 
                        </div>
                    </div>
+                  ):(<h1>Images are unavailable, kindly uoload images</h1>)}
+                  
                </div>
 
                <div className="mobile-carousel">
@@ -368,6 +389,7 @@ export default function Destinationdetails() {
                             </div>
                             
                         </div>
+                       
                         <div className="total">
                             <input  value={data.Amount}/>
                             <div className="get-total">
@@ -379,11 +401,8 @@ export default function Destinationdetails() {
                         
 
                         <div className="check-availability">
-                            <Link to={'/book-destination'}>
-                                <button ><p>BOOK DESTINATION</p></button>
-
-                            </Link>
-
+                                <button  onClick={toggleModal2}><p>CHECK AVAILABILITY</p></button>
+                            
                             
                             
                         </div>
@@ -456,6 +475,32 @@ export default function Destinationdetails() {
 
                          )}
                     </div>
+
+                    {modal2 ? (
+                                <div className="total-modal">
+                                    <div className="top">
+                                        <button>Reserve</button>
+                                        <p>You won't be charged yet.</p>
+
+                                    </div>
+                                    
+                                    <div className="calculations">
+                                        <div className="amount1">
+                                        ${data.Amount * 2 }
+                                        ${data.Amount * (count1 + count2 + count3) }
+                                        <button onClick={toggleModal2} className="close"><i class="fa fa-window-close"></i></button>
+
+                                    
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            ) : null}
+                            
+
                     
 
                     <div className="destination-details">
@@ -592,12 +637,12 @@ export default function Destinationdetails() {
             
 
                 <div className="calendar">
-                 <Calendar localizer={localizer} events={allEvents} 
+                 <Calendar localizer={localizer} events={eventee} 
                  startAccessor="start" endAccessor="end" style={{height:300, margin:"50px"}}/>
         
 
                 </div>
-                <DateRangePickerComponent placeholder="Enter check in date"></DateRangePickerComponent>
+                
                 <Link to={`/book-destination`}>
                     <div className="proceed">
                         <button>Proceed to book destination</button>
@@ -675,7 +720,7 @@ export default function Destinationdetails() {
                         </Link>
 
                      </div>
-                       
+                       <DateRangePickerComponent placeholder="Enter check in date" startDate={data.Available} endDate={data.End}></DateRangePickerComponent>
 
 
                 

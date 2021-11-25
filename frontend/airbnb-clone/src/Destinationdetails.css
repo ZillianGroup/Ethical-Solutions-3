@@ -261,6 +261,11 @@
     margin-left: 10px;
 
 }
+.App .content .middle-section .right .check-availability .total-modal{
+    margin-top: 70px;
+    margin-left: 10px;
+
+}
 
 .App .content .middle-section .right .check-availability button{
     background-image: linear-gradient(to right, turquoise, blue);
@@ -440,6 +445,39 @@ hr{
     bottom: 0;
 
     
+}
+
+.App .content .total-modal{
+    background-color:white;
+    width: 365px;
+    height: 210px;
+    position: absolute;
+    left: 158vh;
+    top: 60vh;
+    
+
+
+
+    
+}
+.App .content .total-modal .top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+      
+}
+.App .content .total-modal .top button{
+    background-image: linear-gradient(to right, turquoise, blue);
+    width: 200px;
+    padding: 5px 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 20px;
+    
+      
 }
 
 .App .content .modal-content{
