@@ -472,7 +472,10 @@ export default function Destinationdetails() {
                     {modal2 ? (
                                 <div className="total-modal">
                                     <div className="top">
-                                        <button>RESERVE</button>
+                                        <Link to={`/book-destination`}>
+                                            <button>RESERVE</button>
+                                        </Link>
+                                        
                                         <p>You won't be charged yet.</p>
 
                                     </div>
