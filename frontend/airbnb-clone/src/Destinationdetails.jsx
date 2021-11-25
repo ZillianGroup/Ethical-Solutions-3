@@ -390,14 +390,7 @@ export default function Destinationdetails() {
                             
                         </div>
                        
-                        <div className="total">
-                            <input  value={data.Amount}/>
-                            <div className="get-total">
-                            <button>Get Total</button>
-                            <h2>${data.Amount * (count1 + count2 + count3) }</h2>
-                            </div>
-
-                        </div>
+                        
                         
 
                         <div className="check-availability">
@@ -479,7 +472,7 @@ export default function Destinationdetails() {
                     {modal2 ? (
                                 <div className="total-modal">
                                     <div className="top">
-                                        <button>Reserve</button>
+                                        <button>RESERVE</button>
                                         <p>You won't be charged yet.</p>
 
                                     </div>
@@ -508,13 +501,16 @@ export default function Destinationdetails() {
                                            
                                             
                                            
-                                        
+                                            <div className="close">
+                                                <button onClick={toggleModal2} className="close">close</button>
 
-                                    
+                                            </div>
+
+                                            
 
 
                                     </div>
-                                    <button onClick={toggleModal2} className="close"><i class="fa fa-window-close"></i></button>
+                                    
                                 </div>
 
 

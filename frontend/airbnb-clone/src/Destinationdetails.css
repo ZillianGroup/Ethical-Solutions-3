@@ -468,14 +468,20 @@ hr{
     
       
 }
+
+.App .content .total-modal .top p{
+    margin-top: 15px;
+    
+      
+}
 .App .content .total-modal .top button{
     background-image: linear-gradient(to right, turquoise, blue);
-    width: 200px;
-    padding: 5px 5px;
+    width: 280px;
+    padding: 10px 10px;
     color: white;
     font-weight: 700;
-    font-size: 15px;
-    border-radius: 20px;
+    font-size: 18px;
+    border-radius: 10px;
     
       
 }
@@ -485,6 +491,20 @@ hr{
     flex-direction: column;
     margin-top: 10px;
     margin-left: 20px;
+    
+      
+}
+
+.App .content .total-modal .calculations .close{
+    text-decoration: underline;
+    font-weight: 700;
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 hr{
+    margin-top: 30px;
+    width: 200px;
     
       
 }
@@ -552,6 +572,7 @@ hr{
 
 .App .content .total-modal .calculations .amount1 .final p{
     text-decoration: underline;
+    font-weight: 700;
 
     
       
