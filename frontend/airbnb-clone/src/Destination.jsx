@@ -77,7 +77,7 @@ useEffect(() => {
       <section className="large-search">
 
         {searchInput && searchInput.length > 1 
-          ? filtered && filtered.map(({ id,  Name, ratings, Fee1, Fee2, Description, End, Available, Location, Media, medium, pictures, Amount}) => (
+          ? filtered && filtered.map(({ id,  Name, ratings, Fee1, Fee2, search, Description, End, Available, Location, Media, medium, pictures, Amount}) => (
             <Link >
                   <div  key={id}>
                     <SearchResult
@@ -93,7 +93,7 @@ useEffect(() => {
               
               
             ))
-          : destination && destination.map(({ id, Name, Fee1, Fee2, Available, End, resources, options, option2, ratings, Amount, places, name, location, medium, guest, beds, bath, author, host, url, Description,  Media, pictures,  thumbnail, large, small}) => (
+          : destination && destination.map(({ id, Name, Fee1, Fee2, search, Available, End, resources, options, option2, ratings, Amount, places, name, location, medium, guest, beds, bath, author, host, url, Description,  Media, pictures,  thumbnail, large, small}) => (
              <Link to={`/destination/${id}`}>
                   <div  key={id}>
                     <SearchResult

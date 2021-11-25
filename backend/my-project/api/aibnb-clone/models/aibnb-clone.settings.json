@@ -112,6 +112,9 @@
     },
     "Fee2": {
       "type": "float"
+    },
+    "search": {
+      "type": "text"
     }
   }
 }

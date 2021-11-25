@@ -150,7 +150,7 @@ export default function Destinationdetails() {
                <div className="heading">
                     <h1 className="font-bold text-2xl">{ data.Name}</h1>
                     <div className="bottom-section">
-                        <div className="location"><a href="https://black-history-month-api.hopless">{ data.Location}</a></div>
+                        <div className="location"><a href={ data.search}>{ data.Location}</a></div>
                         
                     </div>
                </div>
