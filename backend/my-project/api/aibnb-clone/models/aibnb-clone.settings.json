@@ -106,6 +106,12 @@
     },
     "End": {
       "type": "date"
+    },
+    "Fee1": {
+      "type": "float"
+    },
+    "Fee2": {
+      "type": "float"
     }
   }
 }

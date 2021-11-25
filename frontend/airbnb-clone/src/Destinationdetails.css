@@ -23,7 +23,7 @@
 }
 .App .content .images{
     display: flex;
-    justify-content: center;
+    margin-left: 120px;
 }
 
 .App .content .images .left img{
@@ -59,12 +59,12 @@
 }
 
 .App .content .heading h1{
-    margin-left: 150px;
+    margin-left: 40px;
     font-size: 30px;
     
 }
 .App .content .heading .location a{
-    margin-left: 130px;
+    margin-left: 20px;
     text-decoration: underline;
     
 }
@@ -449,7 +449,7 @@ hr{
 
 .App .content .total-modal{
     background-color:white;
-    width: 365px;
+    width: 350px;
     height: 210px;
     position: absolute;
     left: 158vh;
@@ -480,9 +480,93 @@ hr{
       
 }
 
+.App .content .total-modal .calculations .amount1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 20px;
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 .am1 p{
+    text-decoration: underline;
+
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 .am2{
+    display: flex;
+    margin-top: 15px;
+
+    
+      
+}
+
+
+
+.App .content .total-modal .calculations .amount1 .am2 p{
+    text-decoration: underline;
+
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 .am2 h6{
+    margin-left: 150px;
+
+    
+      
+}
+.App .content .total-modal .calculations .amount1 .am3{
+    display: flex;
+    margin-top: 15px;
+
+    
+      
+}
+.App .content .total-modal .calculations .amount1 .am3 p{
+    text-decoration: underline;
+
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 .am3 h6{
+    margin-left: 162px;
+
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 .final{
+    display: flex;
+    margin-top: 15px;
+
+    
+      
+}
+
+
+
+.App .content .total-modal .calculations .amount1 .final p{
+    text-decoration: underline;
+
+    
+      
+}
+
+.App .content .total-modal .calculations .amount1 .final h6{
+    margin-left: 205px;
+
+    
+      
+}
+
 .App .content .modal-content{
     position: absolute;
-    top: 45%;
+    top: 33%;
     left: 73%;
     background-color: white;
     width: 300px;
@@ -766,6 +850,7 @@ hr{
 .App .content .middle-section .upper .heading h1{
     font-size: 25px;
     font-weight: 700;
+    margin-left: 120px;
 
 }
 .App .content .middle-section .upper .img img{

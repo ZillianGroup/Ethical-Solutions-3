@@ -486,14 +486,35 @@ export default function Destinationdetails() {
                                     
                                     <div className="calculations">
                                         <div className="amount1">
-                                        ${data.Amount * 2 }
-                                        ${data.Amount * (count1 + count2 + count3) }
-                                        <button onClick={toggleModal2} className="close"><i class="fa fa-window-close"></i></button>
+                                            <div className="am1">
+                                                <p>${data.Amount  } X 2 nights</p>
+
+                                            </div>
+                                            <div className="am2">
+                                                    <p>Cleaning fees</p>
+                                                    <h6>${data.Fee1}</h6>
+                                            </div>
+                                            <div className="am3">
+                                                    <p>Service fees</p>
+                                                    <h6>${data.Fee2}</h6>
+                                            </div>
+                                            <hr />
+
+                                            <div className="final">
+                                                    <p>Total</p>
+                                                    <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1)}</h6>
+                                            </div>
+
+                                           
+                                            
+                                           
+                                        
 
                                     
 
 
                                     </div>
+                                    <button onClick={toggleModal2} className="close"><i class="fa fa-window-close"></i></button>
                                 </div>
 
 
@@ -507,6 +528,7 @@ export default function Destinationdetails() {
                 
                         <div className="details">
                             <p>{data.Description}</p>
+                            
 
                         </div>
                     </div>
@@ -588,13 +610,9 @@ export default function Destinationdetails() {
     
     
                         </div>
-                    ):(<h1>Amenities are not available at this moment...</h1>)}
-                    
-
+                    ):(<h1>Amenities are not available at this moment...</h1>)}   
                         
-                        
-                        
-                    </div>-
+                    </div>
                     
                     <div className="offer-button">
                         
@@ -628,6 +646,9 @@ export default function Destinationdetails() {
                         />      
 
                     </div>
+                    {(newEvent.start) - (newEvent.end)/(1000 * 60 * 60 * 24)}
+
+                     
                    <div className="book-destination">
                         <button  onClick={handleAddEvent}>Add to Calendar</button>  
                    </div>
