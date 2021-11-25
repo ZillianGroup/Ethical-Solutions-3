@@ -645,7 +645,7 @@ export default function Destinationdetails() {
                         />      
 
                     </div>
-                    {(newEvent.start) - (newEvent.end)/(1000 * 60 * 60 * 24)}
+                   
 
                      
                    <div className="book-destination">
