@@ -64,7 +64,16 @@ export default function Destinationdetails() {
     const [count1, setCount1] =  useState(0)
     const [count2, setCount2] =  useState(0)
     const [count3, setCount3] =  useState(0)
-     
+    const [start, setStart] = useState(null)
+    const [end, setEnd] = useState(null)
+    const [diff, setDiff] = useState(0)
+    useEffect(() => {
+        if (end !== null && start !== null) {
+          let start1 = new Date(end);
+          let end1 = new Date(start);
+          setDiff((start1 - end1) / (1000 * 60 * 60 * 24));
+        }
+      }, [end, start]);
     const toggleModal2 = () =>{
         setModal2(!modal2)
     }
@@ -300,13 +309,13 @@ export default function Destinationdetails() {
                         <div className="checks">
                             <div className="check-in" >
                                 <h6> CHECK IN</h6>
-                                <input type="date"  placeholder="add date"/>
+                                <input type="date"  placeholder="add date"onChange={(e) => setStart(e.target.value)}/>
                             </div>
                             <div className="check-out">
                             <h6> CHECKOUT</h6>
-                            <input type="date"  placeholder="add date"/>
+                            <input type="date"  placeholder="add date"onChange={(e) => setEnd(e.target.value)}/>
                             </div>
-                        
+                          
                         </div>
                         <div className="guests">
                             <div className="guest-number">
@@ -483,7 +492,8 @@ export default function Destinationdetails() {
                                     <div className="calculations">
                                         <div className="amount1">
                                             <div className="am1">
-                                                <p>${data.Amount  } X 2 nights</p>
+                                                <p>${data.Amount } X {diff} nights </p>
+                                                <h6>${data.Amount * diff}</h6>
 
                                             </div>
                                             <div className="am2">
@@ -498,7 +508,7 @@ export default function Destinationdetails() {
 
                                             <div className="final">
                                                     <p>Total</p>
-                                                    <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1)}</h6>
+                                                    <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1) + (data.Amount * diff)}</h6>
                                             </div>
 
                                            
@@ -642,7 +652,8 @@ export default function Destinationdetails() {
                     <div  >
                         <DatePicker  className="shadow border-2  md:ml-8  border-gray-400 py-2 px-6 rounded mt-7" placeholderText="Check-out"
                         selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})}
-                        />      
+                        />    
+                        {diff}  
 
                     </div>
                    

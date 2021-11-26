@@ -517,6 +517,14 @@ hr{
       
 }
 
+.App .content .total-modal .calculations .amount1 .am1 h6{
+    margin-left: 138px;  
+}
+
+.App .content .total-modal .calculations .amount1 .am1 {
+    display: flex;   
+}
+
 .App .content .total-modal .calculations .amount1 .am2{
     display: flex;
     margin-top: 15px;
