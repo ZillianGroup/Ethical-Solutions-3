@@ -320,9 +320,6 @@ export default function Destinationdetails() {
                         <div className="guests">
                             <div className="guest-number">
                                 <h6>GUESTS</h6>
-                            
-                                
-                                
                             </div>
                             <div className="dropdown">
                                 <input   placeholder="Number of guests" value={count1 + count2 + count3} />
@@ -403,10 +400,7 @@ export default function Destinationdetails() {
                         
 
                         <div className="check-availability">
-                                <button  onClick={toggleModal2}><p>CHECK AVAILABILITY</p></button>
-                            
-                            
-                            
+                            <button  onClick={toggleModal2}><p>CHECK AVAILABILITY</p></button>
                         </div>
                         
                         
@@ -480,6 +474,7 @@ export default function Destinationdetails() {
 
                     {modal2 ? (
                                 <div className="total-modal">
+                                    {end <= data.End ? (<p className="font-bold text-center">{data.Name} is available</p>):(<p className="font-bold text-center"> {data.Name} is not available at this moment.</p>)}
                                     <div className="top">
                                         <Link to={`/book-destination`}>
                                             <button>RESERVE</button>
@@ -497,18 +492,18 @@ export default function Destinationdetails() {
 
                                             </div>
                                             <div className="am2">
-                                                    <p>Cleaning fees</p>
-                                                    <h6>${data.Fee1}</h6>
+                                                <p>Cleaning fees</p>
+                                                <h6>${data.Fee1}</h6>
                                             </div>
                                             <div className="am3">
-                                                    <p>Service fees</p>
-                                                    <h6>${data.Fee2}</h6>
+                                                <p>Service fees</p>
+                                                <h6>${data.Fee2}</h6>
                                             </div>
                                             <hr />
 
                                             <div className="final">
-                                                    <p>Total</p>
-                                                    <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1) + (data.Amount * diff)}</h6>
+                                                <p>Total</p>
+                                                <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1) + (data.Amount * diff)}</h6>
                                             </div>
 
                                            
