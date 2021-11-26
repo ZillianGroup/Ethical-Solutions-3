@@ -64,8 +64,8 @@ export default function Destinationdetails() {
     const [count1, setCount1] =  useState(0)
     const [count2, setCount2] =  useState(0)
     const [count3, setCount3] =  useState(0)
-    const [start, setStart] = useState(null)
-    const [end, setEnd] = useState(null)
+    const [start, setStart] = useState(0)
+    const [end, setEnd] = useState(0)
     const [diff, setDiff] = useState(0)
     useEffect(() => {
         if (end !== null && start !== null) {
@@ -177,12 +177,12 @@ export default function Destinationdetails() {
                        <div className="right">
                        <div className="top">
                          <img src={`${`http://localhost:1337`}${data.pictures[0].formats.thumbnail.url}`} alt="destination-pics"/>
-                         <img src={`${`http://localhost:1337`}${data.pictures[1].formats.thumbnail.url}`} alt="destination-pics"/>
+                         <img  className="curve"src={`${`http://localhost:1337`}${data.pictures[1].formats.thumbnail.url}`} alt="destination-pics"/>
 
                        </div>
                        <div className="bottom">
                        <img src={`${`http://localhost:1337`}${data.pictures[2].formats.thumbnail.url}`} alt="destination-pics"/>
-                        <img src={`${`http://localhost:1337`}${data.pictures[3].formats.thumbnail.url}`} alt="destination-pics"/>
+                        <img className="curve" src={`${`http://localhost:1337`}${data.pictures[3].formats.thumbnail.url}`} alt="destination-pics"/>
 
                        </div>
                    </div>
@@ -515,7 +515,7 @@ export default function Destinationdetails() {
                                             </div>
 
                                             
-
+ 
 
                                     </div>
                                     
@@ -631,34 +631,7 @@ export default function Destinationdetails() {
                 </div>
                 <hr className="line"></hr>
 
-                <div className="date-picker">
-                    
-                    <input type="text"  className="shadow w-60 md:ml-8 border-2 border-gray-400  py-2 px-6 rounded mt-7" placeholder="Add title" 
-                    value={newEvent.title} onChange={(e) => setNewEvent({...newEvent, title:e.target.value})}
-                    
-                    />
- 
-                    <div  className="in">
-                        <DatePicker  className="shadow  border-2  md:ml-8 border-gray-400 py-2 px-6 rounded mt-7 "placeholderText="Check-in" 
-                        selected={newEvent.start} onChange={(start) => setNewEvent({...newEvent, start})}
-                        />
-
-                    </div>
-                    <div  >
-                        <DatePicker  className="shadow border-2  md:ml-8  border-gray-400 py-2 px-6 rounded mt-7" placeholderText="Check-out"
-                        selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})}
-                        />    
-
-                    </div>
-                   
-
-                     
-                   <div className="book-destination">
-                        <button  onClick={handleAddEvent}>Add to Calendar</button>  
-                   </div>
-                    
-                    
-                </div>
+               
             
 
                 <div className="calendar">
@@ -745,7 +718,7 @@ export default function Destinationdetails() {
                         </Link>
 
                      </div>
-                       <DateRangePickerComponent placeholder="Enter check in date" startDate={data.Available} endDate={data.End}></DateRangePickerComponent>
+                       
 
 
                 
