@@ -648,7 +648,6 @@ export default function Destinationdetails() {
                         <DatePicker  className="shadow border-2  md:ml-8  border-gray-400 py-2 px-6 rounded mt-7" placeholderText="Check-out"
                         selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})}
                         />    
-                        {diff}  
 
                     </div>
                    
