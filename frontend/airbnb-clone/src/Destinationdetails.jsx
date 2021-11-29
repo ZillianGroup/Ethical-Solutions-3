@@ -8,20 +8,13 @@ import  parse from "date-fns/parse";
 import  startOfWeek from "date-fns/startOfWeek";
 import  getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { DateRangePickerComponent} from '@syncfusion/ej2-react-calendars';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Carousel, { CarouselItem } from "./Carousel";
-
-
-
-
 const locales = {
     "en-US": require("date-fns/locale/en-US")
 }
-
 
 const localizer = dateFnsLocalizer({
     format,
@@ -32,28 +25,15 @@ const localizer = dateFnsLocalizer({
   
 })
 
-
-
-
 export default function Destinationdetails() {
-    
     const events =[
         {
           title: "Available",
           allday: true,
           start: new Date(2021,11,1),
           end: new Date(2021,11,12),
-          
-        }
-      
-      
-      
+        }  
     ]
-
-   
-
-   
-    
     const url = "http://localhost:1337/reviews" 
     const [front, setFront] = useState()
     const [newEvent, setNewEvent] = useState({ title: "", start: "", end: ""})
@@ -100,7 +80,6 @@ export default function Destinationdetails() {
         setCount3(count3 - 1)
     }
     
-    
     const [review, setReview] = useState({
         name:"",
         reviews:""
@@ -116,7 +95,6 @@ export default function Destinationdetails() {
         })
     }, []);
 
-
     function submit(e){
         e.preventDefault();
         Axios.post(url, {
@@ -125,7 +103,6 @@ export default function Destinationdetails() {
         });
         
     }
-
     function handle(e){
         const newdata={...review}
         newdata[e.target.id]=e.target.value
@@ -147,27 +124,21 @@ export default function Destinationdetails() {
     {
         title: "Available",
         start: data.available,
-        end: data.End,
-        
+        end: data.End,  
     }
    ]
     return (
-
         <div className="App">
-           
            <div className='content'>
                <div className="heading">
                     <h1 className="font-bold text-2xl">{ data.Name}</h1>
                     <div className="bottom-section">
-                        <div className="location"><a href={ data.search}>{ data.Location}</a></div>
-                        
+                        <div className="location"><a href={ data.search}>{ data.Location}</a></div> 
                     </div>
                </div>
                <div className="images">
                 {data.Media.formats.large.url.includes(data.Media.formats.large.url) ? (
-                     <div className="left">
-
-                     <img src={`${`http://localhost:1337`}${data.Media.formats.large.url}`} alt="destination-pics"/> 
+                     <div className="left"><img src={`${`http://localhost:1337`}${data.Media.formats.large.url}`} alt="destination-pics"/> 
                    </div>
 
                 ):(
@@ -178,33 +149,26 @@ export default function Destinationdetails() {
                        <div className="top">
                          <img src={`${`http://localhost:1337`}${data.pictures[0].formats.thumbnail.url}`} alt="destination-pics"/>
                          <img  className="curve"src={`${`http://localhost:1337`}${data.pictures[1].formats.thumbnail.url}`} alt="destination-pics"/>
-
                        </div>
                        <div className="bottom">
-                       <img src={`${`http://localhost:1337`}${data.pictures[2].formats.thumbnail.url}`} alt="destination-pics"/>
-                        <img className="curve" src={`${`http://localhost:1337`}${data.pictures[3].formats.thumbnail.url}`} alt="destination-pics"/>
-
+                            <img src={`${`http://localhost:1337`}${data.pictures[2].formats.thumbnail.url}`} alt="destination-pics"/>
+                            <img className="curve" src={`${`http://localhost:1337`}${data.pictures[3].formats.thumbnail.url}`} alt="destination-pics"/>
                        </div>
                    </div>
-                  ):(<h1>Images are unavailable, kindly uoload images</h1>)}
+                  ):(<h1>Images are unavailable, kindly upload images</h1>)}
                   
                </div>
-
                <div className="mobile-carousel">
-               <Carousel>
+                    <Carousel>
                         <CarouselItem> <img src={`${`http://localhost:1337`}${data.Media.formats.thumbnail.url}`} alt="destination-pics"/> </CarouselItem>
                         <CarouselItem><img src={`${`http://localhost:1337`}${data.pictures[0].formats.thumbnail.url}`} alt="destination-pics"/></CarouselItem>
                         <CarouselItem><img src={`${`http://localhost:1337`}${data.pictures[1].formats.thumbnail.url}`} alt="destination-pics"/></CarouselItem>
                         <CarouselItem><img src={`${`http://localhost:1337`}${data.pictures[2].formats.thumbnail.url}`} alt="destination-pics"/></CarouselItem>
                         <CarouselItem><img src={`${`http://localhost:1337`}${data.pictures[3].formats.thumbnail.url}`} alt="destination-pics"/></CarouselItem>
-                </Carousel>
-                            
+                    </Carousel>            
                </div>
-              
-             
                 <div className="middle-section">
                 <div className="upper">
-
                     <div className="heading">
                         <h1>Island hosted by { data.author}</h1>
                     </div>
@@ -214,7 +178,6 @@ export default function Destinationdetails() {
                 </div>
                 
                     <div className="left">
-                        
                         <div className="top">
                             <div className="features">
                                 <div className="guest">
@@ -234,8 +197,6 @@ export default function Destinationdetails() {
                                 
                             </div>
                         </div>
-
-                        
                     </div>
                     <hr className="line-up"></hr>
                         <div className="left-bottom">
@@ -256,11 +217,10 @@ export default function Destinationdetails() {
                                     </div>
                             </div>
 
-
                             <div className="basics2">
                                     <div className="amenities">
                                         <div className="logo">
-                                            <i class="fas fa-home"></i>
+                                            <i class="fas fa-eraser"></i>
 
                                         </div>
                                         <div className="description">
@@ -278,7 +238,7 @@ export default function Destinationdetails() {
                             <div className="basics3">
                                     <div className="amenities">
                                         <div className="logo">
-                                            <i class="fas fa-home"></i>
+                                            <i class="fas fa-swimming-pool"></i>
 
                                         </div>
                                         <div className="description">
@@ -293,14 +253,6 @@ export default function Destinationdetails() {
                             </div>
 
                         </div>
-
-
-                        
-
-                    
-                    
-
-                   
                     <div className="right">
                         <div className="amount">
                             <p className="tag">${data.Amount} </p>
@@ -395,10 +347,6 @@ export default function Destinationdetails() {
                             </div>
                             
                         </div>
-                       
-                        
-                        
-
                         <div className="check-availability">
                             <button  onClick={toggleModal2}><p>CHECK AVAILABILITY</p></button>
                         </div>
@@ -505,18 +453,10 @@ export default function Destinationdetails() {
                                                 <p>Total</p>
                                                 <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1) + (data.Amount * diff)}</h6>
                                             </div>
-
-                                           
-                                            
-                                           
                                             <div className="close">
                                                 <button onClick={toggleModal2} className="close">close</button>
 
                                             </div>
-
-                                            
- 
-
                                     </div>
                                     
                                 </div>
@@ -524,16 +464,10 @@ export default function Destinationdetails() {
 
                             </div>
                             ) : null}
-                            
-
-                    
-
                     <div className="destination-details">
                 
                         <div className="details">
                             <p>{data.Description}</p>
-                            
-
                         </div>
                     </div>
 
@@ -544,36 +478,27 @@ export default function Destinationdetails() {
                         <div className="packages">
                         <div className="heading">
                             <h1>What this place offers</h1>
-
                         </div>
                         
                         <div className="kitchen">
-                            <i class="fas fa-home"></i>
+                            <i class="fa fa-circle"></i>
                             <p>{data.resources[0].options}</p>
-                            
-
                         </div>
 
                         <div className="kitchen">
-                         <i class="fas fa-home"></i>
+                         <i class="fa fa-circle"></i>
                          <p>{data.resources[0].option2}</p>
-                         
-
                         </div>
 
                         <div className="kitchen">
-                         <i class="fas fa-home"></i>
+                         <i class="fa fa-circle"></i>
                          <p>{data.resources[1].options}</p>
-
                         </div>
 
                         <div className="kitchen">
-                         <i class="fas fa-home"></i>
+                         <i class="fa fa-circle"></i>
                          <p>{data.resources[1].option2}</p>
-
-                        </div>
-
-                        
+                        </div> 
                     </div>
 
                     ) :(<h1>Amenities are not available at this moment...</h1>)}
@@ -583,73 +508,53 @@ export default function Destinationdetails() {
                                 show?<div>
     
                                 <div className="kitchen">
-                                    <i class="fas fa-home"></i>
+                                    <i class="fa fa-circle"></i>
                                     <p>{data.resources[2].options}</p>
-    
                                 </div>
     
                                 <div className="kitchen">
-                                    <i class="fas fa-home"></i>
+                                    <i class="fa fa-circle"></i>
                                     <p>{data.resources[2].option2}</p>
     
                                 </div>
     
                                 <div className="kitchen">
-                                    <i class="fas fa-home"></i>
+                                    <i class="fa fa-circle"></i>
                                     <p>{data.resources[3].options}</p>
     
                                 </div>
     
                                 <div className="kitchen">
-                                    <i class="fas fa-home"></i>
+                                    <i class="fa fa-circle"></i>
                                     <p>{data.resources[3].option2}</p>
     
                                 </div>
-    
-                                
-                                
-                            
                             </div>:null
                             }
-    
-    
                         </div>
                     ):(<h1>Amenities are not available at this moment...</h1>)}   
                         
                     </div>
                     
                     <div className="offer-button">
-                        
                         <button onClick={()=>setShow(!show)}><p>Show all amenities</p></button>
-                        
                     </div>
                 
                     <hr className="line"></hr>
-
-                    
-
                 </div>
                 <hr className="line"></hr>
-
-               
-            
-
                 <div className="calendar">
-                 <Calendar localizer={localizer} events={eventee} 
-                 startAccessor="start" endAccessor="end" style={{height:300, margin:"50px"}}/>
-        
-
+                    <Calendar localizer={localizer} events={eventee} 
+                    startAccessor="start" endAccessor="end" style={{height:300, margin:"50px"}}/>
                 </div>
                 
                 <Link to={`/book-destination`}>
                     <div className="proceed">
                         <button>Proceed to book destination</button>
                     </div>
-
                 </Link>      
 
                 <div className="related-data">
-                   
                     { data.places.length > 0 ? (
                         <div className="places">
                         Related destinations:
@@ -659,15 +564,9 @@ export default function Destinationdetails() {
                         </Link>
 
                         </div>
-                         
-                        
-
                     ):(
                         <h2>No related destinations(yet)</h2>
-
-
                     )}
-
                     
                 </div>
                 <div className="review">
@@ -685,20 +584,16 @@ export default function Destinationdetails() {
                                 {front.map ((each)=>(
                                     
                                     
-                                     <div className="feedback">
+                                    <div className="feedback">
                                     
                                      <div className="id" key={each.id}>
                                          <h3>{each.id}</h3>
                                      </div>
                                      <div className="content">
-                                     <h3>"{each.reviews}"</h3>
-                                     <p>by {each.name}</p>
+                                        <h3>"{each.reviews}"</h3>
+                                        <p>by {each.name}</p>
  
                                      </div>
-                                     
-                                    
-                                 
- 
                                     </div>
 
                                 ))}
@@ -717,28 +612,9 @@ export default function Destinationdetails() {
                             <button>See all reviews</button>
                         </Link>
 
-                     </div>
-                       
-
-
-                
+                    </div>
                 </div>
-
-                
-
-
-                
-
-                
-
-                
-                        
-
-                
-              
-            
-              
-              </div>
+            </div>
 
         </div>
     )
