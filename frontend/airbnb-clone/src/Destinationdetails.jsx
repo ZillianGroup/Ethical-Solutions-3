@@ -578,7 +578,7 @@ export default function Destinationdetails() {
                     </form>
                     <div className="front">
                     {
-                        front.length > 0 && (
+                        front.length > 0 ? (
                             
                             <div>
                                 {front.map ((each)=>(
@@ -596,7 +596,7 @@ export default function Destinationdetails() {
                                      </div>
                                     </div>
 
-                                ))}
+                                )) }
                                 
                                 
                             </div>
@@ -604,7 +604,7 @@ export default function Destinationdetails() {
 
                             
                         )
-                    }
+                        : ( <h2  className="font-bold ml-24 md:ml-20 mt-20">No reviews(yet)</h2>)}
                     
                 </div>
                     <div className="see-reviews"> 
