@@ -451,7 +451,7 @@ export default function Destinationdetails() {
 
                                             <div className="final">
                                                 <p>Total</p>
-                                                <h6>${(data.Amount * (count1 + count2 + count3)) + (data.Fee2 + data.Fee1) + (data.Amount * diff)}</h6>
+                                                <h6>${ (data.Fee2 + data.Fee1) + (data.Amount * diff)}</h6>
                                             </div>
                                             <div className="close">
                                                 <button onClick={toggleModal2} className="close">close</button>
